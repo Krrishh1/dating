@@ -33,11 +33,18 @@ app.use(
 	})
 );
 
+// ✅ Ping route to keep server alive
+app.get("/ping", (req, res) => {
+	res.send("I'm awake");
+});
+
+// All API routes
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/matches", matchRoutes);
 app.use("/api/messages", messageRoutes);
 
+// Serve frontend in production
 if (process.env.NODE_ENV === "production") {
 	app.use(express.static(path.join(__dirname, "/client/dist")));
 
