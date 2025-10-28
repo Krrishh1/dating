@@ -38,6 +38,9 @@ app.use(
 app.get("/ping", (req, res) => {
 	res.send("I'm awake");
 });
+app.get("/health", (req, res) => {
+	res.send("I'm fully awake");
+});
 
 // All API routes
 app.use("/api/auth", authRoutes);
