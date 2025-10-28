@@ -41,7 +41,9 @@ app.get("/ping", (req, res) => {
 app.get("/health", (req, res) => {
 	res.send("I'm fully awake");
 });
-
+app.get("/uptimecheck", (req, res) => {
+	res.send("I'm awake now");
+});
 // All API routes
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
